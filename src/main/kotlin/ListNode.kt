@@ -1,4 +1,1 @@
-class ListNode<T>(item: T) {
-    val item: T = item
-    var next: ListNode<T>? = null
-}
+data class ListNode<T>(val item: T, var next: ListNode<T>? = null)
