@@ -11,10 +11,6 @@ internal class LinkedListTest {
         testList = LinkedList()
     }
 
-    @AfterEach
-    fun tearDown() {
-    }
-
     @Test
     fun consideredEmptyWhenSizeIsZero() {
         assertEquals(testList.size, 0)
