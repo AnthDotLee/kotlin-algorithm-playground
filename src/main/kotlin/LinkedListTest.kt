@@ -3,7 +3,7 @@ import org.junit.jupiter.api.*
 
 internal class LinkedListTest {
 
-    lateinit var testList: LinkedList<Int>
+    private lateinit var testList: LinkedList<Int>
 
     @BeforeEach
     fun setUp() {
