@@ -36,7 +36,15 @@ class LinkedList<T> {
                 var prev = head
                 var curr = head!!.next
                 while (curr != null) {
-
+                    // Current node will be null when prev is at the tail.
+                    if (curr.item == item) {
+                        prev!!.next = curr.next
+                        size--
+                        return
+                    } else {
+                        prev = curr
+                        curr = curr.next
+                    }
                 }
             }
         }
