@@ -17,6 +17,13 @@ fun fizzBuzz(i: Int) = when {
 fun isLetter(c: Char) = c in  'a'..'z' || c in 'A'..'Z'
 fun isNotDigit(c: Char) = c in '0'..'9'
 
+// Using checks as when branches
+fun recognize(c: Char) = when (c) {
+    in '0'..'9' -> "It's a digit!"
+    in 'a'..'z', in 'A'..'Z' -> "It's a letter!"
+    else -> "wtf is that."
+}
+
 fun main(args: Array<String>) {
     Greeter().greet()
     println(ColorDetail.BLUE.rgb())
@@ -43,6 +50,12 @@ fun main(args: Array<String>) {
 
     println(isLetter('q'))
     println(isNotDigit('x'))
+    println(recognize('8'))
+
+    // Strings are compared alphabetically when in a range
+    println("Kotlin" in "Java".."Scala")
+    // Can also be used to check set membership
+    println("Kotlin" in setOf("Java", "Scala"))
 }
 
 fun getRainbowMnemonic(color: Color) =
