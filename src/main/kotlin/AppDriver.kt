@@ -1,7 +1,7 @@
 import Color.*
 import java.util.*
 
-class Greeter(val name: String = "World") {
+class Greeter(private val name: String = "World") {
     fun greet() {
         println("Hello, $name!")
     }
@@ -14,7 +14,7 @@ fun fizzBuzz(i: Int) = when {
     else -> "$i "
 }
 
-fun isLetter(c: Char) = c in  'a'..'z' || c in 'A'..'Z'
+fun isLetter(c: Char) = c in 'a'..'z' || c in 'A'..'Z'
 fun isNotDigit(c: Char) = c in '0'..'9'
 
 // Using checks as when branches
@@ -31,7 +31,7 @@ fun main(args: Array<String>) {
     println(getRainbowMnemonic(Color.BLUE))
     println(getWarmth(Color.ORANGE))
     println(mixOptimized(BLUE, YELLOW))
-    println(mix(BLUE,YELLOW))
+    println(mix(BLUE, YELLOW))
 
     for (i in 1..100) {
         print(fizzBuzz(i))
@@ -44,7 +44,7 @@ fun main(args: Array<String>) {
         binaryReps[c] = binary
     }
 
-    for((letter, binary) in binaryReps) {
+    for ((letter, binary) in binaryReps) {
         println("$letter = $binary")
     }
 
