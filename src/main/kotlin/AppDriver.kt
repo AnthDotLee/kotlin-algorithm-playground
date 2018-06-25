@@ -1,4 +1,7 @@
 import Color.*
+import java.io.BufferedReader
+import java.io.StringReader
+import java.text.NumberFormat
 import java.util.*
 
 class Greeter(private val name: String = "World") {
@@ -22,6 +25,16 @@ fun recognize(c: Char) = when (c) {
     in '0'..'9' -> "It's a digit!"
     in 'a'..'z', in 'A'..'Z' -> "It's a letter!"
     else -> "wtf is that."
+}
+
+fun readNumber (reader: BufferedReader) {
+    val number = try {
+        Integer.parseInt(reader.readLine())
+    } catch (e: NumberFormatException) {
+        null
+    }
+
+    println(number)
 }
 
 fun main(args: Array<String>) {
@@ -56,6 +69,14 @@ fun main(args: Array<String>) {
     println("Kotlin" in "Java".."Scala")
     // Can also be used to check set membership
     println("Kotlin" in setOf("Java", "Scala"))
+
+    val list = arrayListOf("10", "11", "1001")
+    for ((index, element) in list.withIndex()) {
+        println("$index: $element")
+    }
+
+    val reader = BufferedReader(StringReader("Not a number"))
+    readNumber(reader)
 }
 
 fun getRainbowMnemonic(color: Color) =
