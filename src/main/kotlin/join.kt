@@ -22,4 +22,12 @@ fun <T> Collection<T>.joinToString(
 }
 
 // Extending String class with a function to get the last character
-fun String.lastChar(): Char = this.get(this.length - 1)
+val String.lastChar: Char
+    get() = get(length - 1)
+
+// Stringbuilder version needs to be a var, since the contents can be modified
+var StringBuilder.lastChar: Char
+    get() = get(length - 1)
+    set(value: Char) {
+        this.setCharAt(length - 1, value)
+    }
